@@ -18,6 +18,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    buildFeatures {
+        viewBinding=true
+    }
 
     buildTypes {
         release {
@@ -59,5 +62,7 @@ dependencies {
     implementation(libs.retrofit)
 // Retrofit with Scalar Converter
     implementation(libs.converter.scalars)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.converter.moshi)
     implementation(libs.coil)
 }

@@ -8,9 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 
+
 class adapter(private val data: List<MarsPhoto>) :RecyclerView.Adapter<adapter.ViewHolder>(){
     class ViewHolder(view: View):RecyclerView.ViewHolder(view) {
-        val imageview: TextView =view.findViewById(R.id.imageView2)
+        val imageview: ImageView =view.findViewById(R.id.imageView2)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup , viewType: Int): ViewHolder {
@@ -23,7 +24,7 @@ class adapter(private val data: List<MarsPhoto>) :RecyclerView.Adapter<adapter.V
     }
 
     override fun onBindViewHolder(holder: ViewHolder , position: Int) {
-        //holder.imageview.load(data[position].img_src)
-        holder.imageview.text=data[position].img_src
+        holder.imageview.load(data[position].img_src)
+        //holder.imageview.text=data[position].img_src
     }
 }
