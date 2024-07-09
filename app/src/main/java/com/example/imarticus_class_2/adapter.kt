@@ -24,7 +24,7 @@ class adapter(private val data: List<MarsPhoto>) :RecyclerView.Adapter<adapter.V
     }
 
     override fun onBindViewHolder(holder: ViewHolder , position: Int) {
-        holder.imageview.load(data[position].img_src)
+        holder.imageview.load(data[position].imgsrc)
         //holder.imageview.text=data[position].img_src
     }
 }

@@ -32,9 +32,4 @@ interface sendme{
     }
 
 //@Serializable
-data class MarsPhoto(
-    val id: String="",
-    //@Json(name = "img_src")
-    @Json(name = "img_src")
-    val img_src: String=""
-)
+

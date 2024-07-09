@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,14 +22,16 @@ import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
-lateinit var datalist:ArrayList<MarsPhoto>
-lateinit var myadapter:adapter
-lateinit var binding:ActivityMainBinding
+private lateinit var datalist:ArrayList<MarsPhoto>
+private lateinit var myadapter:adapter
+private lateinit var binding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        /*enableEdgeToEdge()
         binding=ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(binding.root)*/
+        binding= DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding.text="MarsPhoto()"
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v , insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left , systemBars.top , systemBars.right , systemBars.bottom)
@@ -82,4 +85,7 @@ lateinit var binding:ActivityMainBinding
                 //textview.load(imageurl)
                 recyclerView.adapter=adapter(list)
             }*/
+}
+class ActivityMainBindingImpl(private val binding: ActivityMainBinding) {
+
 }
